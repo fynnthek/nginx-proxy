@@ -5,7 +5,7 @@ server {
 
     # Path for SSL config/key/certificate
     ssl_certificate /etc/ssl/certs/nginx/my.domain.name/fullchain.pem;
-    ssl_certificate_key /etc/ssl/certs/nginx/fynn.cloud/fullchain.key;
+    ssl_certificate_key /etc/ssl/certs/nginx/my.domain.name/fullchain.key;
     include /etc/nginx/includes/ssl.conf;
 
     location / {
