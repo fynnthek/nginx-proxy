@@ -1,0 +1,5 @@
+# Exlude SSL certificates
+data/ssl/*
+
+# Exclude config
+data/nginx/conf.d/default.conf
