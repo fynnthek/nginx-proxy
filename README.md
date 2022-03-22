@@ -10,7 +10,7 @@ Place your certifcates at data/ssl/my.domain.name/
 ```nginx
 {
 server {
-    listen 80;
+    listen 80; # Remove this line if you want to configure redirecting http to https.
     listen 443 ssl http2;
     server_name my.domain.name;
 
@@ -49,6 +49,19 @@ server {
 Spin up the container via docker-compose. It will restart automatically.
 ```
 docker-compose up -d
+```
+
+## Redirect http to https
+Copy data/nginx/conf.d/redirect.conf.example into data/nginx/conf.d/redirect.conf and add the domain names you want to redirect to https as server_name. Remove ```listen 80;``` from the respective virtual host in data/nginx/conf.d/default.conf.
+```nginx
+{
+server {
+    listen 80;
+    server_name my.domain.name;
+    server_name my.seconddomain.name;
+
+    return 302 https://$host$request_uri;
+}
 ```
 
 ## Credits
