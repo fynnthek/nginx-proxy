@@ -3,3 +3,4 @@ data/ssl/*
 
 # Exclude config
 data/nginx/conf.d/default.conf
+data/nginx/conf.d/redirect.conf

@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    server_name my.domain.name;
+    server_name my.seconddomain.name;
+
+    return 302 https://$host$request_uri;
+}
